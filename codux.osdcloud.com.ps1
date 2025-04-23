@@ -67,6 +67,7 @@ if ($WindowsPhase -eq 'WinPE') {
     
     #Configure OSDCloudGUI
     Import-module OSD -Force
+    $OSDModuleResource.StartODSCloudGUI
     $OSDModuleResource.StartODSCloudGUI.BrandName = 'Codux'
 
     #Start OSDCloudGUI
