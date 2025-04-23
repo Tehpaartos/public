@@ -75,12 +75,13 @@ if ($WindowsPhase -eq 'WinPE') {
 
     $configureOSDCloudGUI = @"
 \Import-Module OSD -Force
-`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux22'
+`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
 `$OSDModuleResource.OSDCloud.Default.ImageIndex = '8'
 `$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
+`$OSDModuleResource.OSDCloud.Values.OSNameValues = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
 Start-OSDCloudGUI
 "@
 
