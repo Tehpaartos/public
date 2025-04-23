@@ -64,7 +64,13 @@ if ($WindowsPhase -eq 'WinPE') {
     osdcloud-StartWinPE -OSDCloud
     Write-Host -ForegroundColor Cyan "To start a new PowerShell session, type 'start powershell' and press enter"
     Write-Host -ForegroundColor Cyan "Start-OSDCloud, Start-OSDCloudGUI, or Start-OSDCloudAzure, can be run in the new PowerShell window"
+    
+    #Configure OSDCloudGUI
+    $OSDModuleResource.StartODSCloudGUI.BrandName = 'Codux'
+
+    #Start OSDCloudGUI
     start powershell -NoExit -Command "Start-OSDCloudGUI"
+    
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
 }
