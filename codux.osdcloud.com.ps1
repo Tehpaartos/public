@@ -79,7 +79,7 @@ Import-Module OSD -Force
 Start-OSDCloudGUI
 "@
 
-Start-Process powershell -ArgumentList "-NoExit", "-Command", $configureOSDCloudGUI -Verb RunAs
+Start-Process powershell "-Command", $configureOSDCloudGUI
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
