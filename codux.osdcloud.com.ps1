@@ -77,8 +77,10 @@ if ($WindowsPhase -eq 'WinPE') {
 \Import-Module OSD -Force
 `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux22'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpade = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
+`$OSDModuleResource.OSDCloud.Default.ImageIndex = '8'
+`$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
 Start-OSDCloudGUI
 "@
 
