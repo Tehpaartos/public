@@ -75,9 +75,8 @@ if ($WindowsPhase -eq 'WinPE') {
 
     $configureOSDCloudGUI = @"
 \Import-Module OSD -Force
-`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
+`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux22'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
-`$OSDModuleResource.StartOSDCloudGUI.OSImageIndex = '8'
 `$OSDModuleResource.StartOSDCloudGUI.OSEdition = 'Pro'
 Start-OSDCloudGUI
 "@
