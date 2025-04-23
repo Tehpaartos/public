@@ -71,6 +71,7 @@ if ($WindowsPhase -eq 'WinPE') {
 
     #Start OSDCloudGUI
     Start-OSDCloudGUI
+    Start-Process -FilePath "powershell.exe" -ArgumentList "-NoExit", "-Command", "& { Start-OSDCloudGUI }"
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
