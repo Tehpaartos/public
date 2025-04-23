@@ -81,7 +81,11 @@ if ($WindowsPhase -eq 'WinPE') {
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
 `$OSDModuleResource.OSDCloud.Default.ImageIndex = '8'
 `$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
+`$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
 `$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
+`$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
+`$OSDModuleResource.OSDCloud.Values.Activation = @('Volume', 'Retail')
+`$OSDModuleResource.OSDCloud.Values.Edition = @('Pro', 'Enterprise', 'Home')
 Start-OSDCloudGUI
 "@
 
