@@ -72,7 +72,7 @@ if ($WindowsPhase -eq 'WinPE') {
     #Start OSDCloudGUI
     # Start-Process powershell -ArgumentList "-Command Start-OSDCloudGUI"
 
-
+<#
     $configureOSDCloudGUI = @"
 \Import-Module OSD -Force
 `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
@@ -86,6 +86,76 @@ Start-OSDCloudGUI
 "@
 
 Start-Process powershell "-Command", $configureOSDCloudGUI
+
+#>
+
+
+    # Create the directory if it doesn't exist
+    if (-not (Test-Path -Path "X:\Windows\TEMP")) {
+        New-Item -Path "X:\Windows\TEMP" -ItemType Directory -Force | Out-Null
+    }
+    
+    # The JSON configuration
+    $osdCloudConfig = @'
+{
+    "BrandName":  "Codux33",
+    "BrandColor":  "#ED7D31",
+    "OSActivation":  "Retail",
+    "OSEdition":  "Pro",
+    "OSLanguage":  "en-us",
+    "OSImageIndex":  9,
+    "OSName":  "Windows 11 24H2 x64",
+    "OSReleaseID":  "24H2",
+    "OSVersion":  "Windows 11",
+    "OSActivationValues":  [
+                                "Retail",
+                                "Volume"
+                            ],
+    "OSEditionValues":  [
+                            "Home",
+                            "Education",
+                            "Enterprise",
+                            "Pro"
+                        ],
+    "OSLanguageValues":  [
+                                "en-gb",
+                                "en-us"
+                            ],
+    "OSNameValues":  [
+                            "Windows 11 24H2 x64",
+                            "Windows 10 22H2 x64"
+                        ],
+    "OSReleaseIDValues":  [
+                                "24H2",
+                                "22H2"
+                            ],
+    "OSVersionValues":  [
+                            "Windows 11",
+                            "Windows 10"
+                        ],
+    "ClearDiskConfirm":  false,
+    "restartComputer":  true,
+    "updateDiskDrivers":  true,
+    "updateFirmware":  true,
+    "updateNetworkDrivers":  true,
+    "updateSCSIDrivers":  true
+}
+'@
+
+    # Write the JSON to the file (will overwrite if it exists because of -Force)
+    $osdCloudConfig | Out-File -FilePath "X:\Windows\TEMP\Start-OSDCloudGUI.json" -Encoding utf8 -Force
+    
+    # Verify the file was created/updated
+    if (Test-Path -Path "X:\Windows\TEMP\Start-OSDCloudGUI.json") {
+        Write-Host "JSON configuration has been successfully deployed to X:\Windows\TEMP\Start-OSDCloudGUI.json" -ForegroundColor Green
+        Write-Host "Any existing file was overwritten." -ForegroundColor Green
+    } else {
+        Write-Host "Failed to deploy JSON configuration" -ForegroundColor Red
+    }
+
+    #Start OSDCloudGUI
+    Start-Process powershell -ArgumentList "-Command Start-OSDCloudGUI"
+
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
