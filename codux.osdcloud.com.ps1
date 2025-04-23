@@ -84,8 +84,8 @@ if ($WindowsPhase -eq 'WinPE') {
 `$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
 `$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
 `$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
-`$OSDModuleResource.OSDCloud.Values.Activation = @('Volume', 'Retail')
-`$OSDModuleResource.OSDCloud.Values.Edition = @('Pro', 'Enterprise', 'Home')
+`$OSDModuleResource.OSDCloud.Values.Activation = @('Retail', 'Volume')
+`$OSDModuleResource.OSDCloud.Values.Edition = @('Home', 'Education', 'Enterprise', 'Pro')
 Start-OSDCloudGUI
 "@
 
