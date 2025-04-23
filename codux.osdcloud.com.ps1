@@ -85,7 +85,7 @@ Start-Process powershell "-Command", $configureOSDCloudGUI
 #>
 
 Import-Module OSD -Force
-$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
+$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux2'
 $OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
 $OSDModuleResource.StartOSDCloudGUI.OSImageIndex = '8'
 $OSDModuleResource.StartOSDCloudGUI.OSEdition = 'Pro'
