@@ -70,7 +70,7 @@ if ($WindowsPhase -eq 'WinPE') {
     $OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
 
     #Start OSDCloudGUI
-    start powershell -NoExit -Command "Start-OSDCloudGUI"
+    Start-OSDCloudGUI
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
