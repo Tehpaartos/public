@@ -66,11 +66,17 @@ if ($WindowsPhase -eq 'WinPE') {
     Write-Host -ForegroundColor Cyan "Start-OSDCloud, Start-OSDCloudGUI, or Start-OSDCloudAzure, can be run in the new PowerShell window"
     
     #Configure OSDCloudGUI
-    Import-module OSD -Force
-    $OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
+    # Import-module OSD -Force
+    # $OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
 
     #Start OSDCloudGUI
-    Start-Process powershell -ArgumentList "-Command Start-OSDCloudGUI"
+    # Start-Process powershell -ArgumentList "-Command Start-OSDCloudGUI"
+
+
+    Start-Process powershell -ArgumentList "-NoExit -Command `
+        \"Import-Module OSD -Force; `
+        `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'; `
+        Start-OSDCloudGUI`\""
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
