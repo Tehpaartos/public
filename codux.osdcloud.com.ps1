@@ -72,13 +72,15 @@ if ($WindowsPhase -eq 'WinPE') {
     #Start OSDCloudGUI
     # Start-Process powershell -ArgumentList "-Command Start-OSDCloudGUI"
 
+    Import-Module OSD -Force
+    $OSDModuleResource.StartOSDCloudGUI.WindowsUpade = 'True'
+    $OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
+
 
     $configureOSDCloudGUI = @"
 \Import-Module OSD -Force
 `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux22'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpade = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
 Start-OSDCloudGUI
 "@
 
