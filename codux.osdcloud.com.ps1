@@ -72,11 +72,14 @@ if ($WindowsPhase -eq 'WinPE') {
     #Start OSDCloudGUI
     # Start-Process powershell -ArgumentList "-Command Start-OSDCloudGUI"
 
+    $configureOSDCloudGUI = @"
+Import-Module OSD -Force
+`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
+`$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED1C24'
+Start-OSDCloudGUI
+"@
 
-    Start-Process powershell -ArgumentList "-NoExit -Command `
-        \"Import-Module OSD -Force; `
-        `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'; `
-        Start-OSDCloudGUI`\""
+Start-Process powershell -ArgumentList "-NoExit", "-Command", $configureOSDCloudGUI -Verb RunAs
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
