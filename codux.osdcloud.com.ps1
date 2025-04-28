@@ -113,15 +113,8 @@ if ($WindowsPhase -eq 'AuditMode') {
 #region OOBE
 if ($WindowsPhase -eq 'OOBE') {
     #Remove built-in apps before winget upgrade
-    RemoveAppx BingNews,BingWeather,GamingApp,GetHelp,Getstarted,MicrosoftOfficeHub,Office.OneNote,MicrosoftSolitaireCollection,MicrosoftStickyNotes,People,PowerAutomateDesktop,ScreenSketch,SkypeApp,Todos,WindowsAlarms,WindowsFeedbackHub,WindowsMaps,Xbox.TCUI,XboxGameOverlay,XboxGamingOverlay,XboxIdentityProvider,XboxSpeechToTextOverlay,YourPhone,ZuneMusic,ZuneVideo,XboxApp,MixedReality.Portal,Microsoft3DViewer,MSPaint,549981C3F5F10
+    RemoveAppx BingNews, BingWeather, GamingApp, GetHelp, Getstarted, MicrosoftOfficeHub, Office.OneNote, MicrosoftSolitaireCollection, MicrosoftStickyNotes, People, PowerAutomateDesktop, ScreenSketch, SkypeApp, Todos, WindowsAlarms, windowscommunicationsapps, WindowsFeedbackHub, WindowsMaps, Xbox.TCUI, XboxGameOverlay, XboxGamingOverlay, XboxIdentityProvider, XboxSpeechToTextOverlay, YourPhone, ZuneMusic, ZuneVideo, XboxApp, MixedReality.Portal, Microsoft3DViewer, Wallet, MSPaint, 549981C3F5F10,Windows.DevHome
     
-    #Install.NET Framework
-    NetFX
-
-    #Updates
-    UpdateDrivers
-    UpdateWindows
-
     #Windows Feature Disablement
     $winBuild = [System.Environment]::OSVersion.Version.Build
     $settings = @()
