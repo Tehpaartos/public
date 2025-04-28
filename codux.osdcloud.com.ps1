@@ -112,11 +112,48 @@ if ($WindowsPhase -eq 'AuditMode') {
 
 #region OOBE
 if ($WindowsPhase -eq 'OOBE') {
+    #Remove built-in apps before winget upgrade
+    RemoveAppx BingNews,BingWeather,GamingApp,GetHelp,Getstarted,MicrosoftOfficeHub,Office.OneNote,MicrosoftSolitaireCollection,MicrosoftStickyNotes,People,PowerAutomateDesktop,ScreenSketch,SkypeApp,Todos,WindowsAlarms,WindowsFeedbackHub,WindowsMaps,Xbox.TCUI,XboxGameOverlay,XboxGamingOverlay,XboxIdentityProvider,XboxSpeechToTextOverlay,YourPhone,ZuneMusic,ZuneVideo,XboxApp,MixedReality.Portal,Microsoft3DViewer,MSPaint,549981C3F5F10
+    
+    #Install.NET Framework
+    NetFX
+
+    #Updates
+    UpdateDrivers
+    UpdateWindows
+
+    #Windows Feature Disablement
+    $winBuild = [System.Environment]::OSVersion.Version.Build
+    $settings = @()
+    
+    if ($winBuild -like "19*") {
+        # Windows 10 settings
+        $settings = @(
+            @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Feeds"; Name="EnableFeeds"; Value=0; Type="DWORD"}
+        )
+    }
+    elseif ($winBuild -like "22*") {
+        # Windows 11 settings
+        $settings = @(
+            @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Windows\Windows Chat"; Name="ChatIcon"; Value=3; Type="DWORD"},
+            @{Path="HKLM:\SOFTWARE\Policies\Microsoft\Dsh"; Name="AllowNewsAndInterests"; Value=0; Type="DWORD"}
+        )
+    }
+    
+    foreach ($s in $settings) {
+        New-Item -Path $s.Path -Force -ErrorAction SilentlyContinue | Out-Null
+        Set-ItemProperty -Path $s.Path -Name $s.Name -Value $s.Value -Type $s.Type
+        Write-Host "Set '$($s.Name)' to '$($s.Value)' in '$($s.Path)'"
+    }
+    
     #Load everything needed to run AutoPilot
     osdcloud-StartOOBE -Autopilot -InstallWinGet -WinGetUpgrade
+
+    #Install standard apps
     winget install --id Google.Chrome --silent --scope machine --accept-source-agreements --accept-package-agreements
     winget install --id 7zip.7zip --silent --scope machine --accept-source-agreements --accept-package-agreements
     winget install --id Adobe.Acrobat.Reader.64-bit --silent --scope machine --accept-source-agreements --accept-package-agreements
+    
     $null = Stop-Transcript -ErrorAction Ignore
 }
 #endregion
