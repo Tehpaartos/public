@@ -82,7 +82,7 @@ if ($WindowsPhase -eq 'WinPE') {
 `$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = 'False'
 `$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
-`$OSDModuleResource.OSDCloud.Default.ImageIndex = '8'
+`$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
 `$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
 `$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
 `$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
