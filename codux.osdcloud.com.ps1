@@ -112,8 +112,8 @@ if ($WindowsPhase -eq 'AuditMode') {
 
 #region OOBE
 if ($WindowsPhase -eq 'OOBE') {
-    #Load everything needed to run AutoPilot and Azure KeyVault
-    osdcloud-StartOOBE -Display -Language -DateTime -Autopilot -InstallWinGet -WinGetUpgrade
+    #Load everything needed to run AutoPilot
+    osdcloud-StartOOBE -Autopilot -InstallWinGet -WinGetUpgrade
     winget install --id Google.Chrome --silent --scope=machine --accept-source-agreements --accept-package-agreements
     winget install --id 7zip.7zip --silent --scope=machine --accept-source-agreements --accept-package-agreements
     winget install --id Greenshot.Greenshot --silent --scope=machine --accept-source-agreements --accept-package-agreements
