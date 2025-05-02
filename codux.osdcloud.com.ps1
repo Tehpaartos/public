@@ -68,6 +68,8 @@ if ($WindowsPhase -eq 'WinPE') {
     
    $configureOSDCloudGUI = @"
 Import-Module OSD -Force
+# Small delay to ensure module is loaded
+Start-Sleep -Seconds 1
 `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
