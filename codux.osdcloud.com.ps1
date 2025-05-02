@@ -66,23 +66,23 @@ if ($WindowsPhase -eq 'WinPE') {
     Write-Host -ForegroundColor Cyan "To start a new PowerShell session, type 'start powershell' and press enter"
     Write-Host -ForegroundColor Cyan "Start-OSDCloud, Start-OSDCloudGUI, or Start-OSDCloudAzure, can be run in the new PowerShell window"
     
-   $configureOSDCloudGUI = @'
-Import-Module OSD -Force
-$OSDModuleResource.StartOSDCloudGUI.BrandName = "Codux"
-$OSDModuleResource.StartOSDCloudGUI.BrandColor = "#ED7D31"
-$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = $true
-$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = $true
-$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = $false
-$OSDModuleResource.StartOSDCloudGUI.restartComputer = $true
-$OSDModuleResource.StartOSDCloudGUI.updateFirmware = "$true
-$OSDModuleResource.OSDCloud.Default.ImageIndex = "9"
-$OSDModuleResource.OSDCloud.Default.Edition = "Pro"
-$OSDModuleResource.OSDCloud.Default.Activation = "Retail"
-$OSDModuleResource.OSDCloud.Values.Name = @("Windows 11 24H2 x64", "Windows 10 22H2 x64")
-$OSDModuleResource.OSDCloud.Values.Language = @("en-us", "en-gb")
-$OSDModuleResource.OSDCloud.Values.Edition = @("Home", "Education", "Enterprise", "Pro")
+   $configureOSDCloudGUI = @"
+\Import-Module OSD -Force
+`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
+`$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
+`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = `$False
+`$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
+`$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
+`$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
+`$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
+`$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
+`$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
+`$OSDModuleResource.OSDCloud.Values.Edition = @('Home', 'Education', 'Enterprise', 'Pro')
 Start-OSDCloudGUI
-'@
+"@
 
     #Start OSDCloudGUI
     Start-Process powershell "-Command", $configureOSDCloudGUI
