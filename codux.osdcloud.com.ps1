@@ -71,7 +71,7 @@ if ($WindowsPhase -eq 'WinPE') {
     Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Tehpaartos/public/main/Start-OSDCloudGUI.json" -OutFile "D:\OSDCloud\Automate\Start-OSDCloudGUI.json"
 
     #Start OSDCloudGUI
-    Start-Process powershell "-Command Start-OSDCloudGUI"
+    powershell -Command "& {Import-Module OSD -Force; Start-OSDCloudGUI}"
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
