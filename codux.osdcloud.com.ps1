@@ -80,6 +80,8 @@ Start-Sleep -Seconds 1
 `$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.HPBIOSUpdate = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.HPTPMUpdate = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.HPIAFirmware = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.HPIADrivers = 'True'
 `$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
 `$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
 `$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
