@@ -72,11 +72,14 @@ Import-Module OSD -Force
 Start-Sleep -Seconds 1
 `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = `$False
 `$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.WindowsDefenderUpdate = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.HPBIOSUpdate = 'True'
+`$OSDModuleResource.StartOSDCloudGUI.HPTPMUpdate = 'True'
 `$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
 `$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
 `$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
