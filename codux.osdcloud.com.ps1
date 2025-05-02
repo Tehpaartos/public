@@ -72,7 +72,7 @@ if ($WindowsPhase -eq 'WinPE') {
 
     #Start OSDCloudGUI
     #powershell -Command "& {Import-Module OSD -Force; Start-OSDCloudGUI -ComputerProduct `$null}"
-    Start-OSDCloudGUI
+    Start-OSDCloudGUI -ComputerProduct 'None'
     
     #Stop the startup Transcript.  OSDCloud will create its own
     $null = Stop-Transcript -ErrorAction Ignore
