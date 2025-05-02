@@ -1,0 +1,65 @@
+{
+    "BrandName":  "Codux",
+    "BrandColor":  "#ED7D31",
+    "DriverPackName":  "Microsoft Update Catalog",
+    "OSActivation":  "Retail",
+    "OSEdition":  "Pro",
+    "OSLanguage":  "en-us",
+    "OSImageIndex":  9,
+    "OSName":  "Windows 11 24H2 x64",
+    "OSReleaseID":  "24H2",
+    "OSVersion":  "Windows 11",
+    "OSActivationValues":  [
+                               "Retail",
+                               "Volume"
+                           ],
+    "OSEditionValues":  [
+                            "Home",
+                            "Education",
+                            "Enterprise",
+                            "Pro"
+                        ],
+    "OSLanguageValues":  [
+                             "en-us",
+                             "en-gb"
+                         ],
+    "OSNameValues":  [
+                         "Windows 11 24H2 x64",
+                         "Windows 10 22H2 x64"
+                     ],
+    "OSNameARM64Values":  [
+                              "Windows 11 24H2 ARM64",
+                              "Windows 11 23H2 ARM64",
+                              "Windows 10 22H2 ARM64"
+                          ],
+    "OSReleaseIDValues":  [
+                              "24H2",
+                              "23H2",
+                              "22H2",
+                              "21H2",
+                              "20H2",
+                              "1909"
+                          ],
+    "OSVersionValues":  [
+                            "Windows 11",
+                            "Windows 10"
+                        ],
+    "captureScreenshots":  false,
+    "ClearDiskConfirm":  false,
+    "restartComputer":  true,
+    "updateDiskDrivers":  true,
+    "updateFirmware":  true,
+    "updateNetworkDrivers":  true,
+    "updateSCSIDrivers":  true,
+    "SyncMSUpCatDriverUSB":  true,
+    "OEMActivation":  true,
+    "WindowsUpdate":  true,
+    "WindowsUpdateDrivers":  true,
+    "WindowsDefenderUpdate":  true,
+    "HPIAALL":  false,
+    "HPIADrivers":  true,
+    "HPIAFirmware":  true,
+    "HPIASoftware":  false,
+    "HPTPMUpdate":  true,
+    "HPBIOSUpdate":  true
+}
