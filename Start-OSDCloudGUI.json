@@ -57,4 +57,5 @@
     "HPIASoftware":  false,
     "HPTPMUpdate":  true,
     "HPBIOSUpdate":  true
+    "Product": "None"
 }
