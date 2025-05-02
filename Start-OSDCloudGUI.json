@@ -61,5 +61,5 @@
     "HPIASoftware":  false,
     "HPTPMUpdate":  true,
     "HPBIOSUpdate":  true,
-    "DriverPackName": "Microsoft Update Catalog"
+    "Product": "None"
 }
