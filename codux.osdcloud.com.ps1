@@ -73,9 +73,6 @@ if ($WindowsPhase -eq 'WinPE') {
     #Start OSDCloudGUI
     #powershell -Command "& {Import-Module OSD -Force; Start-OSDCloudGUI -ComputerProduct `$null}"
     Import-Module OSD -Force
-    $Global:OSDCloud = @{}
-    $Global:OSDCloud.DriverPackName = 'Microsoft Update Catalog'
-    $Global:OSDCloud.DriverPack = $null
     Start-OSDCloudGUI
     
     #Stop the startup Transcript.  OSDCloud will create its own
