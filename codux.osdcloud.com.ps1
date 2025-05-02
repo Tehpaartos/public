@@ -68,8 +68,8 @@ if ($WindowsPhase -eq 'WinPE') {
     
    $configureOSDCloudGUI = @'
 Import-Module OSD -Force
-`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
-$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
+`$OSDModuleResource.StartOSDCloudGUI.BrandName = "Codux"
+$OSDModuleResource.StartOSDCloudGUI.BrandColor = "#ED7D31"
 $OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = $true
 $OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = $true
 $OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = $false
