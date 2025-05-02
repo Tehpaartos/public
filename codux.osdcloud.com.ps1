@@ -69,6 +69,7 @@ if ($WindowsPhase -eq 'WinPE') {
     #Configure OSDCloudGUI
     $configureOSDCloudGUI = @"
 Import-Module OSD -Force
+Start-Sleep -Seconds 1
 `$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = `$false
 Start-OSDCloudGUI
 "@
