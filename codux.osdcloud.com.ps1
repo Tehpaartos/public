@@ -73,7 +73,6 @@ if ($WindowsPhase -eq 'WinPE') {
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = 'False'
 `$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
 `$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
