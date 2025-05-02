@@ -65,31 +65,10 @@ if ($WindowsPhase -eq 'WinPE') {
     osdcloud-StartWinPE -OSDCloud
     Write-Host -ForegroundColor Cyan "To start a new PowerShell session, type 'start powershell' and press enter"
     Write-Host -ForegroundColor Cyan "Start-OSDCloud, Start-OSDCloudGUI, or Start-OSDCloudAzure, can be run in the new PowerShell window"
-    
-   $configureOSDCloudGUI = @"
-Import-Module OSD -Force
-# Small delay to ensure module is loaded
-Start-Sleep -Seconds 1
-`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
-`$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
-`$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = `$False
-`$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsDefenderUpdate = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.HPBIOSUpdate = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.HPTPMUpdate = 'True'
-# `$OSDModuleResource.StartOSDCloudGUI.HPIAFirmware = `$True
-# `$OSDModuleResource.StartOSDCloudGUI.HPIADrivers = `$True
-`$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
-`$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
-`$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
-`$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
-`$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
-`$OSDModuleResource.OSDCloud.Values.Edition = @('Home', 'Education', 'Enterprise', 'Pro')
-Start-OSDCloudGUI
-"@
+
+    #Load OSDCloudGUI Defaults
+    New-Item -Path "D:\OSDCloud\Automate" -ItemType Directory -Force | Out-Null
+    Invoke-WebRequest -Uri "https://raw.githubusercontent.com/Tehpaartos/public/main/Start-OSDCloudGUI.json" -OutFile "D:\OSDCloud\Automate\Start-OSDCloudGUI.json"
 
     #Start OSDCloudGUI
     Start-Process powershell "-Command", $configureOSDCloudGUI
