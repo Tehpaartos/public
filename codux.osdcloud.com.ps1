@@ -68,19 +68,19 @@ if ($WindowsPhase -eq 'WinPE') {
     
    $configureOSDCloudGUI = @'
 Import-Module OSD -Force
-$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
-$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
+$OSDModuleResource.StartOSDCloudGUI.BrandName = "Codux"
+$OSDModuleResource.StartOSDCloudGUI.BrandColor = "#ED7D31"
 $OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = $true
 $OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = $true
 $OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = $false
 $OSDModuleResource.StartOSDCloudGUI.restartComputer = $true
-$OSDModuleResource.StartOSDCloudGUI.updateFirmware = '$true
-$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
-$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
-$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
-$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
-$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
-$OSDModuleResource.OSDCloud.Values.Edition = @('Home', 'Education', 'Enterprise', 'Pro')
+$OSDModuleResource.StartOSDCloudGUI.updateFirmware = "$true
+$OSDModuleResource.OSDCloud.Default.ImageIndex = "9"
+$OSDModuleResource.OSDCloud.Default.Edition = "Pro"
+$OSDModuleResource.OSDCloud.Default.Activation = "Retail"
+$OSDModuleResource.OSDCloud.Values.Name = @("Windows 11 24H2 x64", "Windows 10 22H2 x64")
+$OSDModuleResource.OSDCloud.Values.Language = @("en-us", "en-gb")
+$OSDModuleResource.OSDCloud.Values.Edition = @("Home", "Education", "Enterprise", "Pro")
 Start-OSDCloudGUI
 '@
 
