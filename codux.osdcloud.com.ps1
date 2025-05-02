@@ -73,7 +73,6 @@ if ($WindowsPhase -eq 'WinPE') {
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = $False
 `$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
 `$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
 `$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
@@ -82,6 +81,7 @@ if ($WindowsPhase -eq 'WinPE') {
 `$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
 `$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
 `$OSDModuleResource.OSDCloud.Values.Edition = @('Home', 'Education', 'Enterprise', 'Pro')
+`$OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = $False
 Start-OSDCloudGUI
 "@
 
