@@ -75,6 +75,7 @@ if ($WindowsPhase -eq 'WinPE') {
     Import-Module OSD -Force
     $Global:OSDCloud = @{}
     $Global:OSDCloud.DriverPackName = 'Microsoft Update Catalog'
+    $Global:OSDCloud.DriverPack = $null
     Start-OSDCloudGUI
     
     #Stop the startup Transcript.  OSDCloud will create its own
