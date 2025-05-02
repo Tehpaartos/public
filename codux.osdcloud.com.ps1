@@ -69,18 +69,6 @@ if ($WindowsPhase -eq 'WinPE') {
     #Configure OSDCloudGUI
     $configureOSDCloudGUI = @"
 \Import-Module OSD -Force
-`$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
-`$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.WindowsUpdateDrivers = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.restartComputer = 'True'
-`$OSDModuleResource.StartOSDCloudGUI.updateFirmware = 'True'
-`$OSDModuleResource.OSDCloud.Default.ImageIndex = '9'
-`$OSDModuleResource.OSDCloud.Default.Edition = 'Pro'
-`$OSDModuleResource.OSDCloud.Default.Activation = 'Retail'
-`$OSDModuleResource.OSDCloud.Values.Name = @('Windows 11 24H2 x64', 'Windows 10 22H2 x64')
-`$OSDModuleResource.OSDCloud.Values.Language = @('en-us', 'en-gb')
-`$OSDModuleResource.OSDCloud.Values.Edition = @('Home', 'Education', 'Enterprise', 'Pro')
 $OSDModuleResource.StartOSDCloudGUI.ClearDiskConfirm = $False
 Start-OSDCloudGUI
 "@
