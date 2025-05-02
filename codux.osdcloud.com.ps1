@@ -67,7 +67,7 @@ if ($WindowsPhase -eq 'WinPE') {
     Write-Host -ForegroundColor Cyan "Start-OSDCloud, Start-OSDCloudGUI, or Start-OSDCloudAzure, can be run in the new PowerShell window"
     
    $configureOSDCloudGUI = @"
-\Import-Module OSD -Force
+Import-Module OSD -Force
 `$OSDModuleResource.StartOSDCloudGUI.BrandName = 'Codux'
 `$OSDModuleResource.StartOSDCloudGUI.BrandColor = '#ED7D31'
 `$OSDModuleResource.StartOSDCloudGUI.WindowsUpdate = 'True'
